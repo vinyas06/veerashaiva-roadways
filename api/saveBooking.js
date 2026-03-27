@@ -3,6 +3,7 @@ import { MongoClient } from "mongodb";
 const uri = process.env.MONGO_URI;
 
 export default async function handler(req, res) {
+  console.log("ENV CHECK:", process.env.MONGO_URI);
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST allowed" });
   }
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
 
     const db = client.db("fleetDB");
 
-    const result = await db.collection("trips").insertOne(req.body);
+    const result = await db.collection("bookings").insertOne(req.body);
 
     res.status(200).json({ success: true });
   } catch (error) {

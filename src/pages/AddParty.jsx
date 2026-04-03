@@ -1,0 +1,15 @@
+
+import Navbar from "../components/Navbar";
+
+function AddParty() {
+  return (
+    <>
+      <Navbar />
+      <div style={{ padding: "20px" }}>
+        <h1>Page Name</h1>
+      </div>
+    </>
+  );
+}
+
+export default AddParty;
